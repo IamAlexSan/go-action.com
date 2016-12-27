@@ -1,5 +1,5 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] .'/functions/checkEMailAdressUnique.php');
+require_once ($_SERVER['DOCUMENT_ROOT'] .'/functions/checkSubjectUniqueInDB.php');
 
 if(empty($_POST['nickName'])){
 		echo 'введите ваш ник'; 
@@ -23,6 +23,7 @@ if(empty($_POST['nickName'])){
 		
 		$password = $_POST['password'];
 		$eMailConfirm = 0;
+		$password = password_hash($password, PASSWORD_BCRYPT);
 		
 		$query = "INSERT INTO `user_data` (`nick_name`, `e_mail`, `e_mail_confirm`, `password`) VALUES (?, ?, ?, ?)";
 		$stmt = mysqli_prepare($Link, $query);
