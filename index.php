@@ -26,6 +26,13 @@ if(isset($_SESSION['loginedUser'])) {
 	$user = $_SESSION['loginedUser'];
 }
 
+#
+#
+#
+#
+#
+#
+#
 
 unset ($_SESSION['loginedUser']);
 #var_dump(require_once ($_SERVER{'DOCUMENT_ROOT'} .'/functions/registration.php'));
