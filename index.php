@@ -19,13 +19,13 @@ if(isset($_POST['registration'])) require_once ($_SERVER{'DOCUMENT_ROOT'} .'/fun
 #Обработка восстановления доступа
 	
 	
-	require_once ($_SERVER['DOCUMENT_ROOT'] .'/Layouts/' .$layout .'.html');
 	
 if(isset($_SESSION['loginedUser'])) {
 	$layout = 'userAccountPrimaryPage';
 	$user = $_SESSION['loginedUser'];
 }
-
+	require_once ($_SERVER['DOCUMENT_ROOT'] .'/Layouts/' .$layout .'.html');
+	
 #
 #
 #
