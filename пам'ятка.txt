@@ -1,0 +1,33 @@
+FRONT
+Upon the whole
+	єдиний стиль для кнопок
+	normalize.css
+Registration form
+	realtime перевірка на зайнятість логіну 
+	realtime перевірка на зайнятість адреси елктронної почти
+	+++hover/hide password field
+	login field filter
+	eMail field filter
+	password field filter
+	треба щоб після успішної реєстраціі видавало щось типу - "реєстрація пройшла успішно, для повноцінного користування підтвердіть ваш почтовий ящик(коробку, блєать)"
+	і показувало адресу яка була введена при реєстрації приблизно якось так saheno@ukr.net --- sa***no@ukr.net saneev.otherside@yandex.ua --- sa***de@yandex.ua (треба буде подумати як його правильніше зробити/організувати)
+
+Authorisation form
+	create form or refine
+	"loginOrEMail" field filter (field name - "loginOrEMailAdress")
+	password field filter
+	button name - "signIn"
+Restore access form
+	create or refine
+	"loginOrEMail" field filter
+BACK
+Upon the whole
+	field filter fnct
+	field filtering
+	send recovery hash to eMail
+	make "cleaner" fnct
+	make random string generator
+	rename "nick_name" column name to "login". test and debug code
+	refine masqli
+	email adress confirmation
+	
