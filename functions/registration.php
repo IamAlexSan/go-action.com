@@ -13,10 +13,6 @@ if(empty($_POST['nickName'])){
 		echo 'введите пароль';
 		die();
 	}
-	elseif(empty($_POST['userAgreementCheck'])){
-		echo 'подтвердите согласие с пользовательским соглашением';
-		die();
-	} 
 	else{
 		
 		$nickName = $_POST['nickName'];
@@ -26,12 +22,11 @@ if(empty($_POST['nickName'])){
 		uniqueCheck('userMailAdress', $userMailAdress);
 		
 		$password = $_POST['password'];
-		$userAgreementCheck = $_POST['userAgreementCheck'];
 		$eMailConfirm = 0;
 		
-		$query = "INSERT INTO `user_data` (`nick_name`, `e_mail`, `e_mail_confirm`, `password`, `user_agreement`) VALUES (?, ?, ?, ?, ?)";
+		$query = "INSERT INTO `user_data` (`nick_name`, `e_mail`, `e_mail_confirm`, `password`) VALUES (?, ?, ?, ?)";
 		$stmt = mysqli_prepare($Link, $query);
-		mysqli_stmt_bind_param($stmt,'ssiss', $nickName, $userMailAdress, $eMailConfirm, $password, $userAgreementCheck);
+		mysqli_stmt_bind_param($stmt,'ssis', $nickName, $userMailAdress, $eMailConfirm, $password);
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
 		
@@ -46,8 +41,9 @@ if(empty($_POST['nickName'])){
 		$headers .="Reply-To: <saneev.otherside@yandex.ua>\r\n";
 		mail($userMailAdress,$subject,$message,$headers);
 
-		$_SESSION['loginedUser'] = "";
-		header('Location: /'.$_SESSION['loginedUser'].'');
-		die();
+		#$_SESSION['loginedUser'] = $nickName;
+		#$_SESSION['userStatus'] = "logined";
+		header('Location: /');
+		#die("Your Accoun create");
 	}
 ?>
