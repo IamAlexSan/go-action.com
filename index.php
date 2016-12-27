@@ -21,18 +21,10 @@ if(isset($_POST['registration'])) require_once ($_SERVER{'DOCUMENT_ROOT'} .'/fun
 	
 	require_once ($_SERVER['DOCUMENT_ROOT'] .'/Layouts/' .$layout .'.html');
 	
-	
-	
-	
-	
-	
-	
 if(isset($_SESSION['loginedUser'])) {
 	$layout = 'userAccountPrimaryPage';
 	$user = $_SESSION['loginedUser'];
 }
-
-
 
 
 unset ($_SESSION['loginedUser']);
